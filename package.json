@@ -60,7 +60,7 @@
     "commander": "12.0.0",
     "copyfiles": "2.4.1",
     "inquirer": "9.3.2",
-    "postcss-preset-env": "9.5.11",
+    "postcss-preset-env": "10.0.3",
     "tsx": "4.7.2",
     "typescript-eslint": "7.17.0"
   },

@@ -1,23 +1,40 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { title, slug } from '../meta.json'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Layout {title} repoUrl={`https://github.com/devjam/playground-${slug}`}>
   <main>
-    {/* contents start */}
-    <div class="relative flex min-h-svh flex-col items-center justify-center text-30">
-      <ul class="list-disc">
-        <li>
-          <a class="underline hover:no-underline" href={`./${slug}/alpine-example`}
-            >Alpine example</a
-          >
-        </li>
-        <li>
-          <a class="underline hover:no-underline" href={`./${slug}/react-example`}>React example</a>
-        </li>
-      </ul>
+    <div x-data="macosDock" class="flex h-screen w-screen items-center justify-center p-10">
+      <div class="relative mx-auto w-fit rounded-full bg-white px-25 py-11">
+        <span
+          class="pointer-events-none absolute inset-0 block rounded-full border border-black-primary transition-[scale] duration-700 ease-[cubic-bezier(0.24,0.7,0.17,1)]"
+          x-ref="dockBorder"></span>
+        <ul class="flex items-end justify-center gap-6" @mouseleave="handleMouseLeave">
+          {
+            [
+              'folder',
+              'music',
+              'mail',
+              'star',
+              'calender',
+              'skype',
+              'youtube',
+              'check',
+              'settings',
+            ].map((icon) => (
+              <li
+                x-refs="item"
+                class="flex aspect-square w-60 shrink-0 origin-bottom cursor-pointer items-center justify-center rounded-full border border-black-primary bg-white text-black-primary transition-transform duration-700 ease-[cubic-bezier(0.24,0.7,0.17,1)]"
+                @mouseenter="handleMouseEnter"
+              >
+                <Icon name={icon} class="h-auto w-[38%] shrink-0" />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
-    {/* contents end */}
   </main>
 </Layout>

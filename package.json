@@ -40,7 +40,7 @@
     "leva": "0.9.35",
     "lil-gui": "0.19.2",
     "postcss-fluid-sizing-function": "0.0.2",
-    "prettier": "3.2.5",
+    "prettier": "3.3.3",
     "prettier-plugin-astro": "0.13.0",
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-tailwindcss": "0.6.5",
